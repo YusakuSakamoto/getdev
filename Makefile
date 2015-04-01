@@ -1,14 +1,25 @@
 CC	=g++
+BIN	=./bin/
+SRC	=./src/
 MAIN	=main
 LIB	=-lboost_system -lboost_filesystem
 
 .PHONY:clean
-all:main.o main
+all:iMCs01.o arduino.o joystick.o main.o main
 
-main.o:main.cpp
-	$(CC) -c $< -o $@ $(LIB)
+iMCs01.o:$(SRC)iMCs01.cpp
+	$(CC) -c $< -o $(BIN)$@ $(LIB)
 
-main:main.o
-	$(CC) $< -o $@ $(LIB)
+arduino.o:$(SRC)arduino.cpp
+	$(CC) -c $< -o $(BIN)$@ $(LIB)
+
+joystick.o:$(SRC)joystick.cpp
+	$(CC) -c $< -o $(BIN)$@ $(LIB)
+
+main.o:$(SRC)main.cpp
+	$(CC) -c $< -o $(BIN)$@ $(LIB)
+
+main:main.o joystick.o
+	$(CC) $(BIN)main.o $(BIN)joystick.o $(BIN)arduino.o $(BIN)iMCs01.o -o $@ $(LIB)
 clean:
-	rm main.o main
+	rm $(BIN)iMCs01.o $(BIN)arduino.o $(BIN)joystick.o $(BIN)main.o main
