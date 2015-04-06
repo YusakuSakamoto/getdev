@@ -14,7 +14,7 @@ bool insmod_iMCs01()
 
 bool exit_bash()
 {
-  system( " exit" );
+  system( "\"exit\"\n\"exit\"" );
   return true;
 }
 
