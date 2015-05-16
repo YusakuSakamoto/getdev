@@ -29,14 +29,8 @@ int main(int argc,char **argv)
       case 3:
 	permit_iMCs01();
 	break;
-      case 4:
-	permit_bash();
-	break;
-      case 5:	
+      case 4:	
 	insmod_iMCs01();
-	break;
-      case 6:
-	exit_bash();
 	break;
       default:
 	permit_nothing();

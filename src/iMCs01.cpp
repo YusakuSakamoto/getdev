@@ -1,20 +1,9 @@
 #include "my_include.hpp"
 
-bool permit_bash()
-{
-  system( "sudo bash" );
-  return true;
-}
-
 bool insmod_iMCs01()
 {
-  system( "insmod /home/sakamoto/catkin_ws/src/third_robot_driver/include/ThirdRobotInterface/imcs01_driver/driver/urbtc.ko" );
-  return true;
-}
-
-bool exit_bash()
-{
-  system( "\"exit\"\n\"exit\"" );
+  system( "sudo insmod /home/sakamoto/catkin_ws/src/third_robot_driver/include/ThirdRobotInterface/imcs01_driver/driver/urbtc.ko" );
+  system( "rootroot" );
   return true;
 }
 
