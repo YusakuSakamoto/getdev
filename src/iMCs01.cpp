@@ -3,7 +3,6 @@
 bool insmod_iMCs01()
 {
   system( "sudo insmod /home/sakamoto/catkin_ws/src/third_robot_driver/include/ThirdRobotInterface/imcs01_driver/driver/urbtc.ko" );
-  system( "rootroot" );
   return true;
 }
 

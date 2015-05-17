@@ -1,3 +1,5 @@
+"/dev/serial"
+"/dev/ttyACM1"
 "/dev/log"
 "/dev/cdrom"
 "/dev/snd"
